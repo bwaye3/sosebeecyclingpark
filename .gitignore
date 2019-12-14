@@ -3,7 +3,7 @@
 #sites/*/private
 # files/*
 
-sites/default/settings.php
+#sites/default/settings.php
 composer
 # Pantheon commits a settings.php for environment-specific settings.
 # Place local settings in settings.local.php
