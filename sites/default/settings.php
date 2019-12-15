@@ -773,17 +773,35 @@ $settings['entity_update_backup'] = TRUE;
  *
  * Keep this code block at the end of this file to take full effect.
  */
-
-global $config_directories;
+/**
+ * Load local development override configuration, if available.
+ *
+ * Use settings.local.php to override variables on secondary (staging,
+ * development, etc) installations of this site. Typically used to disable
+ * caching, JavaScript/CSS compression, re-routing of outgoing emails, and
+ * other things that should not happen on development and testing sites.
+ *
+ *
+ * global $config_directories;
 $config_directories['sync'] = $app_root.'/../content/sync';
+
+ * Keep this code block at the end of this file to take full effect.
+ */
+
+/**if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+  include $app_root . '/' . $site_path . '/settings.local.php';
+}
+*/
 
 $databases['default']['default'] = array (
   'database' => 'sosebeec_sose',
   'username' => 'sosebeec_bradwaye',
   'password' => 'eG13zz63$$$',
-  'prefix' => 's',
+  'prefix' => '',
   'host' => 'localhost',
   'port' => '3306',
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
   'driver' => 'mysql',
 );
+
+$settings['config_sync_directory'] = 'sites/default/files/config_t8xW-0MIHiIqghHPEf8dDIKcKpunjZGJlwBeZFqcecz87RWFNREexxyrUENaOkscTYMr1OSq9w/sync';
