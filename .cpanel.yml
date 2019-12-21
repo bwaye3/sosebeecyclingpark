@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/sosebeec/public_html
+    - export DEPLOYPATH=/home/sosebeecycling/public_html/staging
     - /bin/cp -R * $DEPLOYPATH
 
 
